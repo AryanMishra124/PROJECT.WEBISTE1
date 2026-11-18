@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineVault | Movie Explorer</title>
+
+    <!-- LINK 1: connects the CSS file -->
+    <link rel="stylesheet" href="MOVIE.css">
+</head>
+
+<body>
+
+    <!-- ===================== NAVIGATION BAR ===================== -->
+    <nav id="navBar">
+        <p class="brand">CINE<span class="brand-red">VAULT</span></p>
+
+        <div class="nav-links">
+            <button id="nav-home" class="nav-btn" onclick="showSection('home')">Home</button>
+            <button id="nav-explore" class="nav-btn" onclick="showSection('explore')">Explore</button>
+            <button id="nav-vault" class="nav-btn" onclick="showSection('vault')">My Vault (0)</button>
+            <button id="nav-recs" class="nav-btn" onclick="showSection('recs')">Recommendations</button>
+        </div>
+    </nav>
+
+
+    <!-- ===================== 1. HOME ===================== -->
+    <section id="home">
+        <div id="hero">
+            <div class="hero-text">
+                <p class="hero-tag">YOUR PERSONAL MOVIE DISCOVERY PLATFORM</p>
+                <h1 class="hero-title">Find the Film<br>You Will Love Next.</h1>
+                <p class="hero-desc">Browse a curated collection of movies, search by title, filter by genre, build your own watchlist and get recommendations that match your taste.</p>
+
+                <div class="hero-buttons">
+                    <button class="red-btn" onclick="showSection('explore')">Start Exploring</button>
+                    <button class="ghost-btn" onclick="showSection('recs')">Get Recommendations</button>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-box">
+                        <p class="stat-number" id="statMovies">0</p>
+                        <p class="stat-label">Movies</p>
+                    </div>
+                    <div class="stat-box">
+                        <p class="stat-number">9</p>
+                        <p class="stat-label">Genres</p>
+                    </div>
+                    <div class="stat-box">
+                        <p class="stat-number" id="statVault">0</p>
+                        <p class="stat-label">In Your Vault</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Three featured posters, filled in by JavaScript -->
+            <div class="hero-posters" id="heroPosters"></div>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <h3>Movie Explorer</h3>
+                <p>Posters, ratings, genres and release years in one clean grid.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Smart Search</h3>
+                <p>Type a title and the results update instantly.</p>
+            </div>
+            <div class="feature-card">
+                <h3>My Movie Vault</h3>
+                <p>Add or remove movies from your personal watchlist.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Recommendations</h3>
+                <p>Pick a genre and discover something new to watch.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===================== 2. EXPLORE + SEARCH + FILTERS ===================== -->
+    <section id="explore">
+        <div class="page-head">
+            <h2 class="page-title">Explore Movies</h2>
+            <p class="page-sub">Search by name or choose a genre. Click any poster for full details.</p>
+        </div>
+
+        <div class="search-row">
+            <input id="searchBox" type="text" placeholder="Search movies by title..." oninput="applyFilters()">
+        </div>
+
+        <div id="genreBar" class="genre-bar"></div>
+
+        <p id="resultCount" class="result-count"></p>
+
+        <div id="movieGrid" class="movie-grid"></div>
+
+        <div id="noResults" class="empty-box">
+            <h3>No movies found</h3>
+            <p>We could not find a match. Try a different title or choose another genre.</p>
+        </div>
+    </section>
+
+
+    <!-- ===================== 3. MY VAULT ===================== -->
+    <section id="vault">
+        <div class="page-head">
+            <h2 class="page-title">My Movie Vault</h2>
+            <p class="page-sub">Your personal watchlist. Everything you save appears here.</p>
+        </div>
+
+        <div id="vaultGrid" class="movie-grid"></div>
+
+        <div id="vaultEmpty" class="empty-box">
+            <h3>Your vault is empty</h3>
+            <p>Add movies from the Explore page and they will show up here.</p>
+            <button class="red-btn" onclick="showSection('explore')">Browse Movies</button>
+        </div>
+    </section>
+
+
+    <!-- ===================== 4. RECOMMENDATIONS ===================== -->
+    <section id="recs">
+        <div class="page-head">
+            <h2 class="page-title">Recommendations</h2>
+            <p class="page-sub">Choose a genre and we will pick movies for you.</p>
+        </div>
+
+        <div id="recGenreBar" class="genre-bar"></div>
+
+        <div class="rec-row">
+            <p id="recInfo" class="result-count"></p>
+            <button class="red-btn" onclick="discoverNew()">Discover Something New</button>
+        </div>
+
+        <div id="recGrid" class="movie-grid"></div>
+    </section>
+
+
+    <!-- ===================== MOVIE DETAILS POP-UP ===================== -->
+    <div id="modal">
+        <div id="modalBox">
+            <button id="closeBtn" onclick="closeModal()">X</button>
+
+            <div id="modalPoster"></div>
+
+            <div id="modalInfo">
+                <p id="modalGenre" class="modal-genre"></p>
+                <h2 id="modalTitle" class="modal-title"></h2>
+                <p id="modalMeta" class="modal-meta"></p>
+                <p class="modal-label">Synopsis</p>
+                <p id="modalSynopsis" class="modal-synopsis"></p>
+                <button id="modalFav" class="fav-btn" onclick="toggleFav(openId)">Add to Vault</button>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>CineVault - a college web project built with HTML, CSS and JavaScript.</p>
+        <p class="footer-small">Ratings and descriptions are sample data for learning purposes.</p>
+    </footer>
+
+
+    <!-- LINK 2: connects the JavaScript file (last, so all elements above exist first) -->
+    <script src="MOVIE.js"></script>
+</body>
+</html>

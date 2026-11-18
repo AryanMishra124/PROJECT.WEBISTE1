@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aryan Mishra | Portfolio</title>
+
+    <!-- LINK 1: connects the CSS file to this page -->
+    <link rel="stylesheet" href="PROJECT.css">
+</head>
+
+<body>
+
+    <!-- Everything lives inside this container so the colour button can change the whole site -->
+    <div id="page">
+
+        <!-- ================= HOMEPAGE (first screen) ================= -->
+        <div id="home">
+            <div id="heroBox">
+                <p class="small-text">WELCOME TO MY PORTFOLIO</p>
+                <h1 id="heroName">Hello, my name is Aryan Mishra.</h1>
+                <p class="tagline">B.Tech Computer Science Student | Aspiring Software Developer | Graphic Design &amp; VFX Enthusiast</p>
+
+                <div class="btn-row">
+                    <button id="btnColor" class="btn" onclick="changeColor()">Color Change</button>
+                    <button id="btnPortfolio" class="btn" onclick="showPortfolio()">Portfolio</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= PORTFOLIO (hidden until button is clicked) ================= -->
+        <div id="portfolio">
+
+            <nav id="navBar">
+                <p class="logo">Aryan Mishra</p>
+
+                <div class="nav-links">
+                    <a class="nav-link" href="#about">About</a>
+                    <a class="nav-link" href="#education">Education</a>
+                    <a class="nav-link" href="#skills">Skills</a>
+                    <a class="nav-link" href="#interests">Interests</a>
+                    <a class="nav-link" href="#activities">Activities</a>
+                    <a class="nav-link" href="#contact">Contact</a>
+                </div>
+
+                <div class="nav-buttons">
+                    <button id="navColorBtn" class="small-btn" onclick="changeColor()">Color</button>
+                    <button id="navHomeBtn" class="small-btn" onclick="showHome()">Home</button>
+                </div>
+            </nav>
+
+            <header id="intro">
+                <h1 id="introName">Hi, I am Aryan Mishra</h1>
+                <p>B.Tech Computer Science student at KIET, Ghaziabad, Uttar Pradesh.</p>
+            </header>
+
+            <main class="cards-area">
+
+                <article id="about" class="card">
+                    <h2>About Me</h2>
+                    <p>I am a B.Tech Computer Science student at KIET, Ghaziabad. My primary interests lie in Graphic Designing, Visual Effects (VFX), and Software Development.</p>
+                    <p>I am fascinated by the creative use of technology and how digital tools can transform ideas into engaging visual experiences.</p>
+                    <p>I believe in continuous learning, curiosity, and consistent improvement.</p>
+                </article>
+
+                <article id="education" class="card">
+                    <h2>Education</h2>
+                    <table>
+                        <tr>
+                            <th>Level</th>
+                            <th>Institute</th>
+                            <th>Details</th>
+                        </tr>
+                        <tr>
+                            <td>B.Tech (Computer Science)</td>
+                            <td>KIET, Ghaziabad</td>
+                            <td>Pursuing, expected 2030</td>
+                        </tr>
+                        <tr>
+                            <td>Class XII</td>
+                            <td>Narayana E-Techno School, Ghaziabad</td>
+                            <td>2025, 90%</td>
+                        </tr>
+                        <tr>
+                            <td>Class X</td>
+                            <td>Dayawati Public School</td>
+                            <td>2023, 82.4%</td>
+                        </tr>
+                    </table>
+                    <p>I am developing a strong foundation in programming, computer science fundamentals, problem-solving, and emerging technologies.</p>
+                </article>
+
+                <article id="skills" class="card">
+                    <h2>Technical Skills</h2>
+                    <ul>
+                        <li>Programming Language: C++ (currently developing)</li>
+                        <li>Web Development: HTML, CSS and JavaScript (Basic)</li>
+                        <li>Development Tools: Visual Studio Code</li>
+                        <li>Version Control: Git and GitHub</li>
+                    </ul>
+                    <p>I am continuously improving my technical knowledge through coding, experimentation, and hands-on learning.</p>
+                </article>
+
+                <article id="softskills" class="card">
+                    <h2>Soft Skills</h2>
+                    <ul>
+                        <li>Communication</li>
+                        <li>Teamwork and Collaboration</li>
+                        <li>Quick Learning</li>
+                        <li>Problem-Solving</li>
+                        <li>Adaptability</li>
+                        <li>Creativity</li>
+                        <li>Time Management</li>
+                    </ul>
+                </article>
+
+                <article id="interests" class="card">
+                    <h2>Career Interests</h2>
+                    <ul>
+                        <li>Exploring software development and building practical applications</li>
+                        <li>Learning modern web development technologies</li>
+                        <li>Understanding graphic design principles and digital creativity</li>
+                        <li>Exploring Visual Effects (VFX) and multimedia technologies</li>
+                        <li>Improving programming skills and logical problem-solving</li>
+                        <li>Staying updated with emerging technologies and industry trends</li>
+                    </ul>
+                    <p>My long-term goal is to become a skilled technology professional who combines technical knowledge with creativity to build meaningful digital solutions.</p>
+                </article>
+
+                <article id="activities" class="card">
+                    <h2>Activities and Participation</h2>
+                    <p>My college experience includes participation in college activities, workshops, and hackathon-related events.</p>
+                    <ul>
+                        <li>Develop better communication and teamwork skills</li>
+                        <li>Gain practical exposure beyond classroom learning</li>
+                        <li>Understand how teams collaborate to solve real-world problems</li>
+                        <li>Explore new technologies and technical domains</li>
+                        <li>Learn from peers, mentors, and experienced individuals</li>
+                    </ul>
+                </article>
+
+                <article id="contact" class="card">
+                    <h2>Contact Information</h2>
+                    <p>I am always open to connecting with students, developers, designers, and technology enthusiasts.</p>
+                    <ul>
+                        <li>GitHub: <a href="https://github.com/AryanMishra124">github.com/AryanMishra124</a></li>
+                        <li>GitHub Username: AryanMishra124</li>
+                        <li>Email: <a href="mailto:mishraaryan5679@gmail.com">mishraaryan5679@gmail.com</a></li>
+                    </ul>
+                </article>
+
+            </main>
+
+            <footer>
+                <p>Thank you for visiting my portfolio.</p>
+                <button id="footerHomeBtn" class="small-btn" onclick="showHome()">Back to Home</button>
+            </footer>
+
+        </div>
+    </div>
+
+    <!-- LINK 2: connects the JavaScript file to this page (placed last so the elements above exist first) -->
+    <script src="PROJECT.js"></script>
+</body>
+</html>
